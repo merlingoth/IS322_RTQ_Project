@@ -1,16 +1,6 @@
-window.HomeView = Backbone.View.extend({
+window.searchView = Backbone.View.extend({
 
-    template:_.template($('#home').html()),
-
-    render:function (eventName) {
-        $(this.el).html(this.template());
-        return this;
-    }
-});
-
-window.Page1View = Backbone.View.extend({
-
-    template:_.template($('#page1').html()),
+    template:_.template($('#search').html()),
 
     render:function (eventName) {
         $(this.el).html(this.template());
@@ -18,9 +8,9 @@ window.Page1View = Backbone.View.extend({
     }
 });
 
-window.Page2View = Backbone.View.extend({
+window.queueView = Backbone.View.extend({
 
-    template:_.template($('#page2').html()),
+    template:_.template($('#queue').html()),
 
     render:function (eventName) {
         $(this.el).html(this.template());
@@ -31,9 +21,9 @@ window.Page2View = Backbone.View.extend({
 var AppRouter = Backbone.Router.extend({
 
     routes:{
-        "":"home",
-        "page1":"page1",
-        "page2":"page2"
+        "":"search",
+        "search":"search",
+        "queue":"queue"
     },
 
     initialize:function () {
@@ -45,19 +35,14 @@ var AppRouter = Backbone.Router.extend({
         this.firstPage = true;
     },
 
-    home:function () {
-        console.log('#home');
-        this.changePage(new HomeView());
+    search:function () {
+        console.log('#search');
+        this.changePage(new searchView());
     },
 
-    page1:function () {
-        console.log('#page1');
-        this.changePage(new Page1View());
-    },
-
-    page2:function () {
-        console.log('#page2');
-        this.changePage(new Page2View());
+    queue:function () {
+        console.log('#queue');
+        this.changePage(new queueView());
     },
 
     changePage:function (page) {
