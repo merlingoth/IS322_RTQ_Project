@@ -33,7 +33,9 @@ var AppRouter = Backbone.Router.extend({
             return false;
         });
         this.firstPage = true;
+		
     },
+
 
     search:function () {
         console.log('#search');
@@ -43,6 +45,7 @@ var AppRouter = Backbone.Router.extend({
     queue:function () {
         console.log('#queue');
         this.changePage(new queueView());
+		loadMagnets();
     },
 
     changePage:function (page) {
