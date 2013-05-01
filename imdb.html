@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script>
+function getSearch(str)
+{
+		var feedurl = "http://imdbapi.org/?title="+str+"&type=json&plot=simple&episode=1&limit=5&yg=0&mt=none&lang=en-US&offset=&aka=simple&release=simple&business=0&tech=0";
+document.getElementById("searchOutput").innerHTML="";
+        jQuery.ajax(
+		{
+            url: feedurl,
+            dataType: 'json',
+            data: 'data',
+            success: function(data)
+			{
+				for(var x=0; x<5; x++)
+				{
+                document.getElementById("searchOutput").innerHTML+="<center><img src='"+data[x].poster+"'>"+data[x].title+" - "+data[x].year+" "+data[x].type+"<br>"+data[x].plot_simple+"</center><br><br><br>";
+				}
+            } 
+			
+         });
+}
+</script>
+</head>
+
+<body>
+<form>
+<input type="text" name="searchField" placeholder="Search..."><input type="button" value="Search!" onClick="getSearch(searchField.value);"></form>
+<div id="searchOutput"></div>
+</body>
+</html>

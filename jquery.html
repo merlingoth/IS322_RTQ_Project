@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title>Example Page</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b3/jquery.mobile-1.0b3.min.css">
+	<script src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0b3/jquery.mobile-1.0b3.min.js"></script>
+    
+<script>
+$(document).ready(function() {
+$("#page1").swipeleft(function() {
+    $.mobile.changePage($("#page2"), {reverse: false});
+});
+$("#page2").swipeleft(function() {
+    $.mobile.changePage($("#page3"), {reverse: false});
+});
+$("#page3").swiperight(function() {
+    $.mobile.changePage($("#page2"), {reverse: true});
+});
+$("#page2").swiperight(function() {
+    $.mobile.changePage($("#page1"), {reverse: true});
+});
+});
+</script>
+   
+    
+</head>
+
+<body>
+<div data-role="page" id="page1">
+    <header data-role="header">
+        <h1>Example Header 1</h1>
+        <div data-role="navbar">
+		<ul>
+			<li><a href="#page1" data-icon="refresh" data-theme="b" data-transition="flip" class="ui-btn-active">Page 1</a></li>
+			<li><a href="#page2" data-icon="grid" data-transition="flip" data-theme="b">Page 2</a></li>
+            <li><a href="#page3" data-icon="grid" data-transition="flip" data-theme="b">Page 3</a></li>
+		</ul>
+		</div>
+    </header>
+    
+    <section data-role="content">
+        <h3>Lorem ipsum dolor</h3>
+       	<h3>Lorem ipsum dolor</h3>
+    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel eleifend ipsum. Aliquam pharetra, ante a semper ullamcorper, libero est pharetra lectus, id venenatis massa dui et velit. Vestibulum convallis orci nulla, eget pretium ante. Nunc nibh justo, porta at sagittis facilisis, gravida eget urna. Aliquam erat volutpat. Proin facilisis nisl ut ipsum eleifend eget consequat mauris consectetur. Aliquam erat volutpat.</p>    
+        
+       	<h3>Lorem ipsum dolor</h3>
+    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel eleifend ipsum. Aliquam pharetra, ante a semper ullamcorper, libero est pharetra lectus, id venenatis massa dui et velit. Vestibulum convallis orci nulla, eget pretium ante. Nunc nibh justo, porta at sagittis facilisis, gravida eget urna. Aliquam erat volutpat. Proin facilisis nisl ut ipsum eleifend eget consequat mauris consectetur. Aliquam erat volutpat.</p>    
+    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel eleifend ipsum. Aliquam pharetra, ante a semper ullamcorper, libero est pharetra lectus, id venenatis massa dui et velit. Vestibulum convallis orci nulla, eget pretium ante. Nunc nibh justo, porta at sagittis facilisis, gravida eget urna. Aliquam erat volutpat. Proin facilisis nisl ut ipsum eleifend eget consequat mauris consectetur. Aliquam erat volutpat.</p>    
+    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel eleifend ipsum. Aliquam pharetra, ante a semper ullamcorper, libero est pharetra lectus, id venenatis massa dui et velit. Vestibulum convallis orci nulla, eget pretium ante. Nunc nibh justo, porta at sagittis facilisis, gravida eget urna. Aliquam erat volutpat. Proin facilisis nisl ut ipsum eleifend eget consequat mauris consectetur. Aliquam erat volutpat.</p>    
+    </section>
+       
+    <footer data-role="footer">
+        <h4>&copy; 2013</h4>
+    </footer>
+</div>
+
+<div data-role="page" id="page2">
+    <header data-role="header">
+        <h1>Example Header 2</h1>
+        <div data-role="navbar">
+		<ul>
+			<li><a href="#page1" data-icon="grid" data-transition="flip" data-direction="reverse" data-theme="b">Page 1</a></li>
+			<li><a href="#page2" data-icon="refresh" data-transition="flip" data-theme="b" class="ui-btn-active">Page 2</a></li>
+            <li><a href="#page3" data-icon="grid" data-transition="flip" data-theme="b">Page 3</a></li>
+		</ul>
+		</div>
+    </header>
+    
+    <section data-role="content">
+        <h3>Lorem ipsum dolor 2</h3>
+       	<h3>Lorem ipsum dolor</h3>
+    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel eleifend ipsum. Aliquam pharetra, ante a semper ullamcorper, libero est pharetra lectus, id venenatis massa dui et velit. Vestibulum convallis orci nulla, eget pretium ante. Nunc nibh justo, porta at sagittis facilisis, gravida eget urna. Aliquam erat volutpat. Proin facilisis nisl ut ipsum eleifend eget consequat mauris consectetur. Aliquam erat volutpat.</p>    
+        
+       	<h3>Lorem ipsum dolor</h3>
+    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel eleifend ipsum. Aliquam pharetra, ante a semper ullamcorper, libero est pharetra lectus, id venenatis massa dui et velit. Vestibulum convallis orci nulla, eget pretium ante. Nunc nibh justo, porta at sagittis facilisis, gravida eget urna. Aliquam erat volutpat. Proin facilisis nisl ut ipsum eleifend eget consequat mauris consectetur. Aliquam erat volutpat.</p>    
+    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel eleifend ipsum. Aliquam pharetra, ante a semper ullamcorper, libero est pharetra lectus, id venenatis massa dui et velit. Vestibulum convallis orci nulla, eget pretium ante. Nunc nibh justo, porta at sagittis facilisis, gravida eget urna. Aliquam erat volutpat. Proin facilisis nisl ut ipsum eleifend eget consequat mauris consectetur. Aliquam erat volutpat.</p>    
+    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel eleifend ipsum. Aliquam pharetra, ante a semper ullamcorper, libero est pharetra lectus, id venenatis massa dui et velit. Vestibulum convallis orci nulla, eget pretium ante. Nunc nibh justo, porta at sagittis facilisis, gravida eget urna. Aliquam erat volutpat. Proin facilisis nisl ut ipsum eleifend eget consequat mauris consectetur. Aliquam erat volutpat.</p>    
+    </section>
+       
+    <footer data-role="footer">
+        <h4>&copy; 2013</h4>
+    </footer>
+</div>
+
+<div data-role="page" id="page3">
+    <header data-role="header">
+        <h1>Example Header 3</h1>
+        <div data-role="navbar">
+		<ul>
+			<li><a href="#page1" data-icon="grid" data-transition="flip" data-direction="reverse" data-theme="b">Page 1</a></li>
+			<li><a href="#page2" data-icon="grid" data-transition="flip" data-direction="reverse" data-theme="b">Page 2</a></li>
+            <li><a href="#page3" data-icon="refresh" data-transition="flip" data-theme="b" class="ui-btn-active">Page 3</a></li>
+		</ul>
+		</div>
+    </header>
+    
+    <section data-role="content">
+        <h3>Lorem ipsum dolor 3</h3>
+       	<h3>Lorem ipsum dolor</h3>
+    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel eleifend ipsum. Aliquam pharetra, ante a semper ullamcorper, libero est pharetra lectus, id venenatis massa dui et velit. Vestibulum convallis orci nulla, eget pretium ante. Nunc nibh justo, porta at sagittis facilisis, gravida eget urna. Aliquam erat volutpat. Proin facilisis nisl ut ipsum eleifend eget consequat mauris consectetur. Aliquam erat volutpat.</p>    
+        
+       	<h3>Lorem ipsum dolor</h3>
+    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel eleifend ipsum. Aliquam pharetra, ante a semper ullamcorper, libero est pharetra lectus, id venenatis massa dui et velit. Vestibulum convallis orci nulla, eget pretium ante. Nunc nibh justo, porta at sagittis facilisis, gravida eget urna. Aliquam erat volutpat. Proin facilisis nisl ut ipsum eleifend eget consequat mauris consectetur. Aliquam erat volutpat.</p>    
+    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel eleifend ipsum. Aliquam pharetra, ante a semper ullamcorper, libero est pharetra lectus, id venenatis massa dui et velit. Vestibulum convallis orci nulla, eget pretium ante. Nunc nibh justo, porta at sagittis facilisis, gravida eget urna. Aliquam erat volutpat. Proin facilisis nisl ut ipsum eleifend eget consequat mauris consectetur. Aliquam erat volutpat.</p>    
+    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel eleifend ipsum. Aliquam pharetra, ante a semper ullamcorper, libero est pharetra lectus, id venenatis massa dui et velit. Vestibulum convallis orci nulla, eget pretium ante. Nunc nibh justo, porta at sagittis facilisis, gravida eget urna. Aliquam erat volutpat. Proin facilisis nisl ut ipsum eleifend eget consequat mauris consectetur. Aliquam erat volutpat.</p>    
+    </section>
+       
+    <footer data-role="footer">
+        <h4>&copy; 2013</h4>
+    </footer>
+</div>
+</body>
+</html>

@@ -8,6 +8,26 @@ window.searchView = Backbone.View.extend({
     }
 });
 
+window.titleReviewView = Backbone.View.extend({
+
+    template:_.template($('#titleReview').html()),
+
+    render:function (eventName) {
+        $(this.el).html(this.template());
+        return this;
+    }
+});
+
+window.movieSearchView = Backbone.View.extend({
+
+    template:_.template($('#movieSearch').html()),
+
+    render:function (eventName) {
+        $(this.el).html(this.template());
+        return this;
+    }
+});
+
 window.queueView = Backbone.View.extend({
 
     template:_.template($('#queue').html()),
@@ -21,7 +41,9 @@ window.queueView = Backbone.View.extend({
 var AppRouter = Backbone.Router.extend({
 
     routes:{
-        "":"search",
+        "":"movieSearch",
+        "movieSearch":"movieSearch",
+		"titleReview":"titleReview",
         "search":"search",
         "queue":"queue"
     },
@@ -37,11 +59,22 @@ var AppRouter = Backbone.Router.extend({
     },
 
 
+    movieSearch:function () {
+        console.log('#movieSearch');
+        this.changePage(new movieSearchView());
+    },
+	
+    titleReview:function () {
+        console.log('#titleReview');
+        this.changePage(new titleReviewView());
+		loadTitle();
+    },
+	
     search:function () {
         console.log('#search');
         this.changePage(new searchView());
     },
-
+	
     queue:function () {
         console.log('#queue');
         this.changePage(new queueView());
