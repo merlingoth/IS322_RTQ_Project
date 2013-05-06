@@ -8,6 +8,16 @@ window.searchView = Backbone.View.extend({
     }
 });
 
+window.settingsView = Backbone.View.extend({
+
+    template:_.template($('#settings').html()),
+
+    render:function (eventName) {
+        $(this.el).html(this.template());
+        return this;
+    }
+});
+
 window.titleReviewView = Backbone.View.extend({
 
     template:_.template($('#titleReview').html()),
@@ -43,6 +53,7 @@ var AppRouter = Backbone.Router.extend({
     routes:{
         "":"movieSearch",
         "movieSearch":"movieSearch",
+		"settings":"settings",
 		"titleReview":"titleReview",
         "search":"search",
         "queue":"queue"
@@ -79,6 +90,13 @@ var AppRouter = Backbone.Router.extend({
         console.log('#queue');
         this.changePage(new queueView());
 		loadMagnets();
+		setInterval("loadMagnets()", 60000);
+    },
+
+    settings:function () {
+        console.log('#settings');
+        this.changePage(new settingsView());
+		loadSettings();
     },
 
     changePage:function (page) {

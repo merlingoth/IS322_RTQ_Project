@@ -12,7 +12,7 @@
     <script type="text/template" id="movieSearch">
 
         <div data-role="header" data-id="myheader" data-position="fixed">
-            <a href="#" onclick="alert('Created by Dan Manzo and Josh Van Wingerden');" class="ui-btn-right">Info</a>
+            <a href="#settings" data-icon="gear" class="ui-btn-right">Settings</a>
             <h1>Movie Search</h1>
         </div>
 
@@ -34,7 +34,7 @@
     <script type="text/template" id="titleReview">
 
         <div data-role="header" data-id="myheader" data-position="fixed">
-            <a href="#" onclick="alert('Created by Dan Manzo and Josh Van Wingerden');" class="ui-btn-right">Info</a>
+            <a href="#settings" data-icon="gear" class="ui-btn-right">Settings</a>
             <h1>Movie Search</h1>
         </div>
 
@@ -58,7 +58,7 @@
     <script type="text/template" id="search">
 
         <div data-role="header" data-id="myheader" data-position="fixed">
-            <a href="#" onclick="alert('Created by Dan Manzo and Josh Van Wingerden');" class="ui-btn-right">Info</a>
+            <a href="#settings" data-icon="gear" class="ui-btn-right">Settings</a>
             <h1>Torrent Search</h1>
         </div>
 
@@ -81,13 +81,13 @@
     <script type="text/template" id="queue">
 
         <div data-role="header" data-id="myheader" data-position="fixed">
-            <a href="#" onclick="alert('Created by Dan Manzo and Josh Van Wingerden');" class="ui-btn-right">Info</a>
+            <a href="#settings" data-icon="gear" class="ui-btn-right">Settings</a>
             <h1>Torrent Queue</h1>
         </div>
 
         <div data-role="content">
         <ul id="queuedList" data-role="listview">
-          <li data-role="list-divider">queued</li>
+          <li data-role="list-divider">downloading</li>
 		</ul>
 		</div>
         <div data-role="content">
@@ -107,7 +107,34 @@
         </div>
 
     </script>
+    <script type="text/template" id="settings">
 
+        <div data-role="header" data-id="myheader" data-position="fixed">
+            <h1>Settings</h1>
+        </div>
+
+		<section>
+		<label for="ipaddress_settings">IP Address:</label>
+		<form>
+		<input data-mini="true" id="ipaddress_settings" type="text" incremental="incremental" onkeyup="overwriteToStorage('ipaddress', this.value)" onblur="overwriteToStorage('ipaddress', this.value)" autofocus="autofocus">
+		<label for="port_settings">Port #:</label>
+		<input data-mini="true" id="port_settings" type="tel" onkeyup="overwriteToStorage('port', this.value)" onblur="overwriteToStorage('port', this.value)"></section>
+		
+		<label for="username_settings">Username:</label>
+		<input data-mini="true" id="username_settings" type="text" onkeyup="overwriteToStorage('username', this.value)" onblur="overwriteToStorage('username', this.value)"></section>
+		<label for="password_settings">Password:</label>
+		<input data-mini="true" id="password_settings" type="password" onkeyup="overwriteToStorage('password', this.value)" onblur="overwriteToStorage('password', this.value)"></section>
+		</form>
+		<section>Created by Dan Manzo and Josh Van Wingerden. All rights reserved.</section>
+        <div data-role="footer" data-id="myfooter" data-position="fixed"> 
+        <div data-role="navbar">
+                <ul>
+						<li><a href="#movieSearch">Movie Search</a></li>
+                        <li><a href="#queue">Queue</a></li>
+                </ul>
+        </div>
+        </div> 
+    </script>
     <!-- The Scripts -->
     <script src="lib/jquery-1.7.1.min.js"></script>
     <script src="js/jqm-config.js"></script>
@@ -116,13 +143,7 @@
     <script src="lib/backbone-min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/piratesearch.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/json2/20110223/json2.js"></script>  
-    <script src="https://raw.github.com/andris9/jStorage/master/jstorage.js"></script>
-	<script src="https://raw.github.com/bittorrenttorque/backbrace/master/backbrace.js"></script>
-	<script src="lib/pairing.btapp.js"></script>  
-	<script src="lib/plugin.btapp.js"></script>  
-    <script src="lib/client.btapp.js"></script>  
-    <script src="lib/btapp.js"></script> 
+    
 </head>
 
 <body></body>
